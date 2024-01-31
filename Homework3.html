@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Teresa" />
 
-<meta name="date" content="2024-01-24" />
+<meta name="date" content="2024-01-31" />
 
-<title>index</title>
+<title>Homework3</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -349,15 +350,29 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">index</h1>
-<h4 class="date">2024-01-24</h4>
+<h1 class="title toc-ignore">Homework3</h1>
+<h4 class="author">Teresa</h4>
+<h4 class="date">2024-01-31</h4>
 
 </div>
 
 
-<p>HomeWork_1 <a href="newpage.html">Link</a></p>
-<p>Homework_2 <a href="Homework.html">Link</a></p>
-<p>Homework+3 <a href="Homework3.html">Link</a></p>
+<p>Question1</p>
+<pre><code>Find: \s{2,} 
+ Replace: </code></pre>
+<p>I searched for two spaces between words and then replaced with a
+comma.</p>
+<p>Question2
+<code>Find: (\w+),\s*(\w+), (.*)  Replace:\2 \1 (\3)</code></p>
+<p>I first captured the whole thing w+ to indicate that it’s the first
+word and it’s followed by a comma and space which followed by a word and
+than I define the rest with .*. I then placed characters of interest in
+parenthesis. I reordered by switching 1 and 2 placing a space to replace
+the comma and placing parenthesis on the last 3rd part.</p>
+<p>Question3 <code>Find: (.mp3)(\s)  Replace: \1\n</code></p>
+<p>I considered the last set of characters and the space and than I
+placed separate parenthesis on both, I then defined the position of
+break and followed it with the appropriate command.</p>
 
 
 
