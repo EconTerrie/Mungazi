@@ -84,5 +84,6 @@ Find: (\w+),\s*(\w+), (.*)
  ```
  Find: (\w{4})\w+,(\w{3})\w+,(\d+.\d+),(.*)
  Replace:\1\2, \4, \3
+ ```
  
  Here I modified the code from above to combine 1st 4 letters of the 1st word and 1st 3 letters of the 2nd word. The rest of the word was defined and not included in parenthesis because they are not of interest. Parenthesis 3 and 4 were swopped to swop the numbers. 
