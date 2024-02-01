@@ -9,6 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 Question1
+
+
+
 ```
 Find: \s{2,} 
  Replace: 
@@ -16,6 +19,8 @@ Find: \s{2,}
  I searched for two spaces between words and then replaced with a comma.
  
  Question2
+ 
+ 
  ```
 Find: (\w+),\s*(\w+), (.*)
  Replace:\2 \1 (\3)
@@ -25,9 +30,59 @@ Find: (\w+),\s*(\w+), (.*)
  
  
  Question3
+ 
+ 
  ```
  Find: (.mp3)(\s)
  Replace: \1\n
  ```
  
- I considered the last set of characters and the space and than I placed separate parenthesis on both, I then defined the position of break and followed it with the appropriate command.
+ I considered the last set of characters and the space and then I placed separate parenthesis on both, I then defined the position of break and followed it with the appropriate command.
+ 
+ 
+ 
+ Question 4
+ 
+ 
+ ```
+ Find: (\d+)(\s*\w+.*)(.mp3)
+ Replace: \2_\1\3
+ ```
+ 
+ To capture the whole text per text line, I defined the digit, space between the digit, the word after the text and everything else that comes after it and then I defined the last part, which is uniform in all texts. I then placed parenthesis on the digit the space and the whole chunk of words, and the last part .mp3. For replacing, I placed the first part which is the digit on position 2 and placed an underscore between positions 2 and 1.
+ 
+ 
+ 
+ Question 5
+ 
+ 
+ 
+ ```
+ Find: (\w)\w+,(\w+),(\d+.\d+)(,.*)
+ Replace: \1_\2\4
+ ```
+ 
+ 
+ To capture the whole text, I create an abbreviation by isolating the first letter from the rest of the word, and then I identify the second word. For the decimal number, I separate the two digits with a "dot" and then I represent the last digit as "everything else". I then place parenthesis on the on the isolated letter, the second word, the decimal number and the last digit. On replace, I present the sequence with the isolated letter first, followed by an underscore, and then the second word and then the last part (everything else), which is a number. 
+ 
+ 
+ Question 6 
+ 
+ 
+ ```
+ Find: (\w)\w+,(\w{4})(\w+),(\d+.\d+)(,.*)
+ Replace: \1_\2\5
+ ```
+ 
+ To capture the whole text I modified the code in question 5 by including the first four characters instead of including the whole word.
+ 
+ 
+ 
+ Question 7 
+ 
+ 
+ ```
+ Find: (\w{4})\w+,(\w{3})\w+,(\d+.\d+),(.*)
+ Replace:\1\2, \4, \3
+ 
+ Here I modified the code from above to combine 1st 4 letters of the 1st word and 1st 3 letters of the 2nd word. The rest of the word was defined and not included in parenthesis because they are not of interest. Parenthesis 3 and 4 were swopped to swop the numbers. 
