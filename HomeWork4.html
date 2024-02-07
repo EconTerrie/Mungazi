@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Teresa" />
 
-<meta name="date" content="2024-01-24" />
+<meta name="date" content="2024-02-07" />
 
-<title>index</title>
+<title>HomeWork4</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -349,15 +350,108 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">index</h1>
-<h4 class="date">2024-01-24</h4>
+<h1 class="title toc-ignore">HomeWork4</h1>
+<h4 class="author">Teresa</h4>
+<h4 class="date">2024-02-07</h4>
 
 </div>
 
 
-<p>HomeWork_1 <a href="newpage.html">Link</a></p>
-<p>Homework_2 <a href="Homework.html">Link</a></p>
-<p>Homework_3 <a href="Homework3.html">Link</a></p>
+<div id="question-1" class="section level2">
+<h2>Question 1</h2>
+</div>
+<div id="a" class="section level1">
+<h1>a)</h1>
+<pre class="r"><code>x &lt;- 1.1
+a &lt;- 2.2
+b &lt;- 3.3
+z &lt;- x^(a*b)
+print(z)</code></pre>
+<pre><code>## [1] 1.997611</code></pre>
+<p>I defined the values of x, a, and b, and then defined the function
+while placing parenthesis to specify the order of operation.</p>
+</div>
+<div id="b" class="section level1">
+<h1>b)</h1>
+<pre class="r"><code>z &lt;- (x^a)^b
+print(z)</code></pre>
+<pre><code>## [1] 1.997611</code></pre>
+<p>I placed x^a in parenthesis to indicate that I’d like to calculate x
+to the power of b and then express the result to the power of b.</p>
+</div>
+<div id="c" class="section level1">
+<h1>c)</h1>
+<pre class="r"><code>z &lt;- 3*x^3+2*x^2+1
+print(z)</code></pre>
+<pre><code>## [1] 7.413</code></pre>
+<p>I use asterisks to indicate that I’m multiplying the digit by x
+expressed as a power of 3 and 2 respectively.</p>
+<div id="question-2" class="section level2">
+<h2>Question 2</h2>
+</div>
+</div>
+<div id="a-1" class="section level1">
+<h1>a)</h1>
+<pre class="r"><code>x &lt;- c(seq(1,8), seq(7,1))
+print(x)</code></pre>
+<pre><code>##  [1] 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1</code></pre>
+<p>The c in the function combines everything. The first sequence is in
+ascending order from 1 to 8 and the second is from 7 to 1.</p>
+</div>
+<div id="b-1" class="section level1">
+<h1>b)</h1>
+<pre class="r"><code>my_vec &lt;-c(1,2,3,4,5)
+rep(x=my_vec, times=my_vec)</code></pre>
+<pre><code>##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5</code></pre>
+<p>I define my vectors and then say for each vector to be repeated in
+the corresponding number of times in my defined vectors</p>
+</div>
+<div id="c-1" class="section level1">
+<h1>c)</h1>
+<pre class="r"><code>my_vec &lt;-c(5,4,3,2,1)
+times &lt;- c(1,2,3,4,5)
+rep(x=my_vec, times=times)</code></pre>
+<pre><code>##  [1] 5 4 4 3 3 3 2 2 2 2 1 1 1 1 1</code></pre>
+<p>I started off by defining my vectors in descending order and then I
+follow it with a command that says how many times each of the vectors
+will be repeated. The rep command than lists my vectors, each repeated
+the number of times defined in the “times” function.</p>
+<div id="question-3" class="section level2">
+<h2>Question 3</h2>
+<pre class="r"><code>x &lt;- runif(1,0,10)
+y &lt;- runif(1,0,10)
+coordinates &lt;- c(x,y)
+print(coordinates)</code></pre>
+<pre><code>## [1] 1.475635 2.245368</code></pre>
+<pre class="r"><code>radius &lt;- sqrt(x^2 + y^2)
+theta &lt;- atan (x/y)
+polar_coordinates &lt;- c(radius,theta)
+print(polar_coordinates)</code></pre>
+<pre><code>## [1] 2.6868526 0.5814135</code></pre>
+</div>
+<div id="question-4" class="section level2">
+<h2>Question 4</h2>
+<pre class="r"><code>queue &lt;- c(&quot;sheep&quot;, &quot;fox&quot;, &quot;owl&quot;, &quot;ant&quot;)
+queue &lt;- c(queue, &quot;serpent&quot;) # update the queue by adding &quot;serpent&quot;.
+print(queue)</code></pre>
+<pre><code>## [1] &quot;sheep&quot;   &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
+<pre class="r"><code>queue &lt;- queue[-1] # -1 denotes that I&#39;ve taken the first element from the queue 
+print(queue)</code></pre>
+<pre><code>## [1] &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
+<pre class="r"><code>queue &lt;- c(&quot;donkey&quot;,queue[queue!= &quot;donkey&quot;]) # donkey at the start of the queue denotes that it&#39;s the first element and then queue! = &quot;donkey&quot; takes away donkey from the original list of elements.
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot;  &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
+<pre class="r"><code>queue &lt;- queue [queue!= &quot;serpent&quot;] # the expression in square brackets expresses that we do not want the defined element in the queue, serpent therefore gets removed.
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;owl&quot;    &quot;ant&quot;</code></pre>
+<pre class="r"><code>queue &lt;- queue[queue!=&quot;owl&quot;] # the expression in square brackets expresses that we do not want the defined element in the queue, owl therefore gets removed. 
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;ant&quot;</code></pre>
+<pre class="r"><code>queue &lt;-append(queue,&quot;aphid&quot;,2)
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;aphid&quot;  &quot;ant&quot;</code></pre>
+</div>
+</div>
 
 
 

@@ -3,18 +3,27 @@
 
 
 
-First String,Second,1.22,3.4
-Second,More Text   1.555555  2.2220
-Third,x,3,124
-
-
-
-  Bryan Ballif (University of Vermont)
- Aaron Ellison (Harvard Forest)
- Sydne Record (Bryn Mawr)
  
  
- 0001 Georgia Horseshoe .mp3
-0002 Billy In The Lowground .mp3
-0003 Winder Slide .mp3
-0004 Walking Cane.mp3
+Camppen,4410.2
+Campher,310.5
+Myrmpun,412.2
+Lasineo,553.3
+
+
+
+
+
+Camppen, ,44, 10.2
+Campher, ,3, 10.5
+Myrmpun, ,4, 12.2
+Lasineo, ,55, 3.3
+
+
+Camppen, ,44, 10.2
+Campher, 3, 10.5
+Myrmpun, 4, 12.2
+Lasineo, 55, 3.3
+
+
+
