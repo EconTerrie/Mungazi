@@ -9,11 +9,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-HomeWork_1 [Link](newpage.html)
+Homework_1 [Link](newpage.html)
 
 Homework_2 [Link](Homework.html)
 
 Homework_3 [Link](Homework3.html)
 
-HomeWork_4 [Link](HomeWork_4.html.html)
+Homework_4 [Link](HomeWork_4.html)
 
