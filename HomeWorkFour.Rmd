@@ -1,14 +1,13 @@
 ---
 title: "HomeWork4"
 author: "Teresa"
-date: "2024-02-07"
+date: "2024-02-08"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 
 ## Question 1
 # a)
@@ -28,6 +27,7 @@ I defined the values of x, a, and b, and then defined the function while placing
 z <- (x^a)^b
 print(z)
 ```
+
 I placed x^a  in parenthesis to indicate that I'd like to calculate x to the power of b and then express the result to the power of b.
 
 # c)
@@ -75,7 +75,7 @@ theta <- atan (x/y)
 polar_coordinates <- c(radius,theta)
 print(polar_coordinates)
 ```
-
+I started off by defining a range from which I want my numbers to be picked from. 1 is stating the number of digits we would like to pick. The coordinates function defines the coordinates in the order in which I'd like them to appear. To convert to polar coordinates (radius, theta), I first calculate the radius and theta, I then define these. 
 
 ## Question 4
 ```{R}
@@ -93,16 +93,18 @@ print(queue)
 queue <-append(queue,"aphid",2)
 print(queue)
 aphid_position <-which(queue=="aphid") # the === sign checks if elements are the same.
-print(aphid_position)
+print(aphid_position) 
 ```
 
 
 ## Question 5
 
 ```{R}
-(num 1:100) {if(!(num %% 2==0 || num %% 3==0 || num %% 7==0)) {result <- c(result,num)}
+result <-c()
+(num1,100) if (!num %% 2=0 && !num %% 3=0 && !num %% 7!=0)
+{result <-c(result,num)}
 ```
-  
-  
-  
-  
+I am getting an error message here, "execution halted".
+
+
+

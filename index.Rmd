@@ -15,5 +15,7 @@ Homework_2 [Link](Homework.html)
 
 Homework_3 [Link](Homework3.html)
 
-Homework_4 [Link](HomeWork4.html)
+Homework_4 [Link](HM_4.html)
+
+HomeWork_4 [Link](HM_4.html)
 
