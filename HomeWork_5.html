@@ -362,37 +362,34 @@ display: none;
 <pre class="r"><code>n_dims &lt;- sample(3:10,1)
 consecutive_int &lt;- 1:(n_dims^2) # here I specified the the range of numbers that covers the consecutive integers vector - which is from 1 to &quot;n_dims^2&quot;. 
 reshuffled_vec &lt;- sample(consecutive_int) # the &quot;sample&quot; command reshuffles the vector of consecutive integers 
-squareMat &lt;- matrix(reshuffled_vec,nrow=n_dims,ncol=n_dims) # for the square matrix, I use the reshuffled vectors and then define the matrix row and column length, which in this case are equal and both equal to &quot;side_length&quot;. 
+squareMat &lt;- matrix(reshuffled_vec,nrow=n_dims,ncol=n_dims) # for the square matrix, I use the reshuffled vectors and then define the matrix row and column length, which in this case are equal and both equal to &quot;n_dims&quot;. 
 print(squareMat)</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]   31   17   14   32   30   16
-## [2,]    7   24   26   25   23    5
-## [3,]    3   18   36   35   33   27
-## [4,]    1   11    8   34   19   29
-## [5,]    2   22    4   13   28   21
-## [6,]   12    6    9   20   10   15</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   19    5   15    6   23
+## [2,]   17    1    7   20   10
+## [3,]    8    2    9   18   13
+## [4,]   16   22   25    3   14
+## [5,]    4   11   21   24   12</code></pre>
 <pre class="r"><code>t(squareMat)</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]   31    7    3    1    2   12
-## [2,]   17   24   18   11   22    6
-## [3,]   14   26   36    8    4    9
-## [4,]   32   25   35   34   13   20
-## [5,]   30   23   33   19   28   10
-## [6,]   16    5   27   29   21   15</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   19   17    8   16    4
+## [2,]    5    1    2   22   11
+## [3,]   15    7    9   25   21
+## [4,]    6   20   18    3   24
+## [5,]   23   10   13   14   12</code></pre>
 <pre class="r"><code>print(squareMat)</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]   31   17   14   32   30   16
-## [2,]    7   24   26   25   23    5
-## [3,]    3   18   36   35   33   27
-## [4,]    1   11    8   34   19   29
-## [5,]    2   22    4   13   28   21
-## [6,]   12    6    9   20   10   15</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   19    5   15    6   23
+## [2,]   17    1    7   20   10
+## [3,]    8    2    9   18   13
+## [4,]   16   22   25    3   14
+## [5,]    4   11   21   24   12</code></pre>
 <pre class="r"><code>sum_first_row &lt;- sum(squareMat[1,])
 print(sum_first_row)</code></pre>
-<pre><code>## [1] 140</code></pre>
+<pre><code>## [1] 68</code></pre>
 <pre class="r"><code>mean_first_row &lt;- mean(squareMat[1,])
 print(mean_first_row)</code></pre>
-<pre><code>## [1] 23.33333</code></pre>
+<pre><code>## [1] 13.6</code></pre>
 </div>
 
 
