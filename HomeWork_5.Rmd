@@ -1,0 +1,38 @@
+---
+title: "HomeWork_5"
+author: "Teresa"
+date: "2024-02-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+```{R}
+n_dims <- sample(3:10,1)
+consecutive_int <- 1:(n_dims^2) # here I specified the the range of numbers that covers the consecutive integers vector - which is from 1 to "n_dims^2". 
+reshuffled_vec <- sample(consecutive_int) # the "sample" command reshuffles the vector of consecutive integers 
+squareMat <- matrix(reshuffled_vec,nrow=n_dims,ncol=n_dims) # for the square matrix, I use the reshuffled vectors and then define the matrix row and column length, which in this case are equal and both equal to "n_dims". 
+print(squareMat)
+```
+
+```{R}
+t(squareMat)
+print(squareMat)
+```
+
+```{R}
+sum_first_row <- sum(squareMat[1,])
+print(sum_first_row)
+```
+
+```{R}
+mean_first_row <- mean(squareMat[1,])
+print(mean_first_row)
+```
+
+```{R}
+
+
