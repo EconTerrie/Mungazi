@@ -19,7 +19,7 @@ Homework_4 [link](HomeWork_4.html)
 
 Homework_5 [link](HomeWork_5.html)
 
-Homework_6 [link](HomeWork_6.html)
+Homework_6 [link](HomeWork6.html)
 
 
 
