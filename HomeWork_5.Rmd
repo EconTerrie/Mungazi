@@ -115,10 +115,9 @@ print(df)
 ```
 
 ```{R}
-mean_my_unis <- mean(df$my_unis,na.rm=TRUE)
+mean_my_unis <- mean(df$my_unis,na.rm=TRUE) # exclude NA values in the data.
 print(mean_my_unis)
 ```
-
 
 
 ```
