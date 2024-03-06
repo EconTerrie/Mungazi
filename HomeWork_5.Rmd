@@ -34,5 +34,96 @@ print(mean_first_row)
 ```
 
 ```{R}
+sum_last_row <- sum(squareMat[nrow(squareMat), ])
+print(sum_last_row)
+```
+
+
+```{R}
+mean_last_row <- mean(squareMat[nrow(squareMat), ])
+print(mean_last_row)
+```
+
+
+```{R}
+result <- eigen(squareMat)
+eigenvalues <- result$values
+print(eigenvalues)
+```
+
+
+```{R}
+eigenvectors <- result$vectors
+print(eigenvectors)
+```
+
+
+```{R}
+typeof(eigenvalues)
+class(eigenvalues)
+```
+
+```{R}
+typeof(eigenvectors)
+class(eigenvectors)
+#The $values and $vectors are complex numbers, and these contain real and imaginary numbers.
+```
+
+
+# Question 2
+```{R}
+my_matrix <- matrix(runif(16), nrow = 4)
+my_logical <- runif(100) > 0.5
+my_letters <- sample(letters,26)
+my_list <- list(my_matrix=my_matrix, my_logical=my_logical, my_letters=my_letters)
+print(my_list)
+```
+
+
+```{R} 
+new_list <- list(my_list$my_matrix[2,2], my_list$my_logical[2], my_list$my_letters [2])
+print(new_list)
+```
+
+```{R}
+data_types <-sapply(new_list,typeof)
+print(data_types)
+```
+
+```{R}
+combined_vector <- c(new_list)
+print(combined_vector)
+combined_type <- typeof(combined_vector)
+print(combined_type)
+```
+
+# Question 3
+```{R}
+df<- data.frame(my_unis = runif(26, min=0,max=10), my_letterss = sample(LETTERS,26))
+print(df)
+```
+
+```{R}
+df[sample(1:26,4),"my_unis"] <- NA
+NA_rows <- which(is.na(df$my_unis))
+print(NA_rows)
+```
+
+```{R}
+df <- df[order(df$my_letterss),]
+print(df)
+```
+
+```{R}
+mean_my_unis <- mean(df$my_unis,na.rm=TRUE)
+print(mean_my_unis)
+```
+
+
+
+```
+
+
+                                                                                              
 
 

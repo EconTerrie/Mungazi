@@ -1,0 +1,41 @@
+---
+title: "HomeWork6"
+author: "Teresa"
+date: "2024-02-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+# get the foreign package 
+install.packages("foreign")
+library(foreign)
+```
+
+# Get the haven package 
+install.packages("haven")
+library(haven) 
+
+NSdata <- haven::read_dta("/Users/NewMacBookAir/Downloads/NS.dta")
+
+
+
+library(ggplot2) # for graphics
+library(MASS) # for maximum likelihood estimation
+install.packages("dplyr")
+library(dplyr)
+```
+
+
+
+```{r}
+z <- data.frame(NSdata$aware_count,1:2000)
+z <- z%>%
+filter (NSdata.aware_count>0)%>%
+  mutate(ID=1:1959)
+```
