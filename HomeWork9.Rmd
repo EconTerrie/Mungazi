@@ -1,0 +1,88 @@
+---
+title: "HomeWork9"
+author: "Teresa"
+date: "2024-04-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{R}
+library(tidyverse)
+library(ggplot2)
+```
+
+```{R}
+generate_ID <- function(nSize) {
+  return(1:sum(nSize))
+}
+generate_aware_count <- function(nSize,nMean,nSD) {
+  aware_count <- c(rnorm(n=nSize[1],mean=nMean[1],sd=nSD[1]),
+                   rnorm(n=nSize[2],mean=nMean[2],sd=nSD[2]),
+                   rnorm(n=nSize[3],mean=nMean[3],sd=nSD[3]))
+  return(aware_count)
+}
+create_ANOdata <- function(ID,TGroup,aware_count) {
+  ANOdata <- data.frame(ID=ID,TGroup=TGroup,aware_count=aware_count)
+  return(ANOdata)
+}  
+nGroup <- 3 
+nName <- c("no_policy","hemp_policy","marijuana_policy")
+nSize <- c(35,24,29)
+nMean <- c(8,10,16)
+nSD <- c(5,5,5)
+ID <- generate_ID(nSize)
+aware_count <- generate_aware_count(nSize,nMean,nSD)
+TGroup <- rep(nName,nSize)
+ANOdata <- create_ANOdata(ID,TGroup,aware_count)
+str(ANOdata)
+print(ANOdata)
+ANOmodel <- aov(aware_count ~ TGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+z <- summary(ANOmodel)
+str(z)
+```
+
+
+# Here, I'm modifying the previous function by adding a new function that performs a t-test to compare the means of aware_count within specified groups, hemp_policy and no_policy 
+
+```{R}
+generate_ID <- function(nSize) {
+  return(1:sum(nSize))
+}
+generate_aware_count <- function(nSize,nMean,nSD) {
+  aware_count <- c(rnorm(n=nSize[1],mean=nMean[1],sd=nSD[1]),
+                   rnorm(n=nSize[2],mean=nMean[2],sd=nSD[2]),
+                   rnorm(n=nSize[3],mean=nMean[3],sd=nSD[3]))
+  return(aware_count)
+}
+create_ANOdata <- function(ID,TGroup,aware_count) {
+  ANOdata <- data.frame(ID=ID,TGroup=TGroup,aware_count=aware_count)
+  return(ANOdata)
+}  
+perform_ttest <- function(ANOdata,group1,group2) {
+  subset_data <- ANOdata[ANOdata$TGroup %in% c(group1,group2), ]
+  t_test_result <- t.test(aware_count ~ TGroup, data=subset_data)
+  return(t_test_result)
+}  
+nGroup <- 3 
+nName <- c("no_policy","hemp_policy","marijuana_policy")
+nSize <- c(35,24,29)
+nMean <- c(8,10,16)
+nSD <- c(5,5,5)
+ID <- generate_ID(nSize)
+aware_count <- generate_aware_count(nSize,nMean,nSD)
+TGroup <- rep(c("no_policy","hemp_policy","marijuana_policy"),nSize)
+ANOdata <- create_ANOdata(ID,TGroup,aware_count)
+str(ANOdata)
+print(ANOdata)
+ANOmodel <- aov(aware_count ~ TGroup,data=ANOdata)
+print(ANOmodel)
+print(summary(ANOmodel))
+z <- summary(ANOmodel)
+t_test_result <-perform_ttest(ANOdata,"hemp_policy","no_policy")
+print(t_test_result)
+```
