@@ -41,16 +41,6 @@ library(tidyr)
 results_long <- gather(results, group, mean, -replicate)  
 ggplot(results_long, aes(x = mean, fill = group)) + geom_histogram(binwidth = .5, color = "black", position = "identity", alpha = .5) + facet_wrap(~group, scales = "free") + labs(title = "Distribution of Reshuffled Means by Group") 
 
-
-
-
-
-
-
-
-
-
-
 generate_data <- function(group,n,mean) {
 df <-data.frame(group=rep(group,n),response=rnorm(n,mean=mean))
 }
@@ -87,6 +77,6 @@ ggplot(data = results, aes(x=Group1))+
   geom_histogram(data = results, aes(x=Group2),binwidth=0.5,fill="lightblue",color="black",alpha=0.7) +
   geom_histogram(data = results, aes(x=Group3),binwidth=0.5,fill="lightblue",color="black",alpha=0.7) +
   labs(title = "Comparison of Reshuffled Means vs Original Means",x="Group Mean",y="Frequency" +
-         theme_minimal()
+    theme_minimal()
   
   

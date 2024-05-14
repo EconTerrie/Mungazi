@@ -1,0 +1,76 @@
+---
+title: "HomeWork12"
+author: "Teresa"
+date: "2024-05-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{R}
+library(ggplot2)
+library(dplyr)
+library(ggthemes)
+library(patchwork)
+library(cowplot)
+library(colorspace)
+library(wesanderson)
+library(ggsci)
+library(scales)
+library(tidyverse)
+```
+
+```{R}
+data <- iris
+str(data)
+```
+
+
+```{R}
+p1 <- ggplot(data) + aes(x=Petal.Length,fill="Species") +
+  geom_histogram(position="identity",color="black",bins=30) +
+  facet_wrap(~Species,scales = "free_y") +
+  labs(title="Histogram of Petal Lenght by Species in Iris Datase",x="Petal Length",y="Species")
+
+p1
+```
+
+```{R}
+ggplot(data) + aes(x=Petal.Length,y=Species,fill=Species) + geom_boxplot() + labs(title = "Boxplot", x = "Petal Length (cm)", y="Plant Species") + theme(plot.title=element_text(hjust=0.5)) + theme(legend.position = "none")
+```
+
+
+```{R}
+p2 <- ggplot(data) + aes(x=Petal.Length,fill=Species) +
+  geom_density()
+
+p2
+```
+
+
+```{R}
+p3 <- ggplot(iris, aes(x = Species, y = Petal.Length, fill = Species)) + geom_violin(trim = FALSE) + labs(title = "Violin Plot of Petal Length by Species", x = "Species", y = "Petal Length", fill = "Species")
+
+p3
+```
+
+
+```{R}
+p4 <- ggplot(data) + aes(x=Species,y=Petal.Length,color=Species) + geom_jitter() + labs(title = "Jitter Plot", x = "Plant Species", y="Petal Length (cm)") + theme(plot.title=element_text(hjust=0.5))
+
+p4
+```
+
+
+```{R}
+final_plot <- (p1|p2)/(p3|p4)+plot_annotation(caption = "a. Histogram of Petal Length by Species
+b. Density Plot of Petal Length by Species
+c. Violin Plot of Petal Length by Species
+d. Jitter Plot of Petal Length by Species", tag_levels = "a")
+
+final_plot
+```
+
+
